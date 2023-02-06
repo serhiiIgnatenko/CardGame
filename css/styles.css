@@ -1,0 +1,166 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100%;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.field {
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+	gap: 15px;
+	border: solid 2px #666;
+	padding: 15px;
+	width: auto;
+}
+
+.field.hide {
+	display: none;
+}
+
+.card {
+	width: 75px;
+	height: 75px;
+	background-color: #87cefa;
+	color: #800000;
+	font-size: 32px;
+	line-height: 1;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 15px;
+}
+
+.card::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #008b8b;
+	border-radius: inherit;
+	transition: background-color 0.5s ease-in-out;
+}
+
+.card:hover::after {
+	background-color: darkblue;
+}
+
+.card.checked::after {
+	background-color: transparent;
+	z-index: -1;
+}
+
+.card[hidden] {
+	visibility: hidden;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.card span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card img {
+	width: 85%;
+	height: auto;
+	max-height: 85%;
+}
+
+.settings {
+	margin-bottom: 25px;
+}
+
+.btn {
+	border: none;
+	font-weight: 600;
+	font-size: 16px;
+	padding: 7px 20px;
+	color: #000;
+	background-color: lightgreen;
+	border-radius: 7px;
+}
+
+.btn:focus {
+	box-shadow: 0 0 3px #666;
+}
+
+.btn-reset {
+	color: tomato;
+}
+
+.type_game input:focus {
+	box-shadow: 0 0 3px #666;
+}
+
+.squar-size {
+	border: solid 2px #666;
+	background-color: #fff;
+	border-radius: 7px;
+	color: #000;
+	font-weight: 600;
+	padding: 7px 0px 7px 10px;
+}
+
+.congratulation {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(71, 61, 139, 0.5);
+	color: #000;
+	font-size: 32px;
+	font-weight: 700;
+	transform: translate(-100%, 0);
+	transition: transform 0.5s ease-in;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.congratulation.show {
+	transform: translate(0, 0);
+}
+
+.counter-section {
+	margin-bottom: 25px;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.counter-section .counter {
+	font-size: 22px;
+	font-weight: 900;
+}
+
+@media screen and (max-width: 766px) {
+	.field {
+		gap: 10px;
+		padding: 10px;
+	}
+
+	.field[data-size='8'] .card {
+		width: 32px;
+		height: 32px;
+		font-size: 14px;
+		border-radius: 8px;
+	}
+
+	.field[data-size='6'] .card {
+		width: 45px;
+		height: 45px;
+		font-size: 24px;
+		border-radius: 15px;
+	}
+
+}

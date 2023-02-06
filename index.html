@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cards</title>
+
+	<link rel="stylesheet" href="./css/clear.css">
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+	<main class="main" style="background-image: url(./img/img1.jpg);">
+		<div class="settings">
+			<input type="number" name="squareSize" class="squar-size" id="squareSize" min="2" max="8" step="2"
+				value="2">
+			<button class="btn btn-start" id="start">Start</button>
+			<button class="btn btn-reset" id="reset">Reset</button>
+		</div>
+		<div class="type_game">
+			<label for="type_number">
+				<input type="radio" name="type_game" id="type_number" checked="checked" data-typeGame="number">
+				Number
+			</label>
+			<label for="type_image">
+				<input type="radio" name="type_game" id="type_image" data-typeGame="image">
+				Image
+			</label>
+		</div>
+		<div class="counter-section">
+			Колличество попыток: <span class="counter" id="counter">0</span>
+		</div>
+		<div class="field hide" id="field">
+		</div>
+		<div class="congratulation" id="congratulation">
+			Вы выйграли. <br> Для продолжения нажмите "Start"
+		</div>
+	</main>
+
+	<script src="./js/main.js"></script>
+</body>
+
+</html>
